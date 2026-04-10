@@ -90,6 +90,12 @@ curl -X POST https://your-eval-endpoint.com/run -d '{"agent_version": "current"}
 - **Watch for regressions.** Improving one metric can break another. Always check the full eval suite.
 - **Run it again after a week.** As you add features, bloat and drift creep back in.
 
+## Examples
+
+See **[EXAMPLES.md](EXAMPLES.md)** for before/after optimizations of 15 real open-source agents, including OpenAI Swarm, Aider, SWE-agent, OpenHands, and MetaGPT.
+
+**Live demo result:** We ran the Body Shop on a support ticket classifier with a vague prompt ("You are a helpful customer support assistant. Be very accurate and careful."). One pass — replacing the attitude instruction with explicit category definitions and a decision tree — took accuracy from **85% to 100%** and reduced latency by 25%.
+
 ## Background
 
 Based on [HyperAgents](https://arxiv.org/abs/2603.19461) (Zhang et al., 2026). They showed that agents which can modify their own code and improvement process achieve sustained self-improvement across coding (Polyglot), paper review, robotics reward design, and Olympiad math grading — outperforming both static baselines and systems with fixed improvement mechanisms. The key insight: the improvement mechanism itself should be editable, not just the task-solving logic. Agent Body Shop is the stripped-down, practical version of that loop.
